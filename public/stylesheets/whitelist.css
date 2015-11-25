@@ -1,0 +1,285 @@
+h1,h2,h3,h4 {
+  font-weight: 300;
+}
+
+.navbar-inverse .navbar-brand, .navbar-brand {
+  font-size: 25px;
+  color: #4285f4;
+
+}
+
+.blue {
+  color: #4285f4;
+}
+
+.dropdown {
+  display: block;
+  padding: 15px 10px;
+
+}
+
+.margin-top-70 {
+  margin-top: 70px;
+}
+
+.dropdown a {
+  color: #9d9d9d;
+}
+
+.page-image{
+max-width: 200px;
+display: block;}
+
+
+a:hover, .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+color: #4285f4;
+  text-decoration: none;
+}
+a {
+  color: #4285f4;
+  transition: .1s all linear;
+  text-decoration: none;
+}
+
+
+.name {
+  font-weight: 400;
+}
+
+body {
+    padding-top: 70px;
+    font-family: 'nunito';
+    font-weight: 300;
+    font-size: 16px;
+
+    /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+}
+img {
+  max-width: 100%;
+}
+.social {margin: 30px 0px; }
+
+.photo {}
+
+.whitelist-item {margin-bottom: 10px;}
+@media (min-width: 768px){
+      .navbar-nav {
+    float: right;
+
+  }
+
+  .navbar-nav, .navbar-header {
+    padding-top: 25px;
+
+  }
+  }
+.navbar-inverse {
+    background-color: white;
+    border-color: transparent;
+    transition: all .3s linear;
+  }
+
+  .navbar-inverse .navbar-brand:focus, .navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-nav>li>a:focus, .navbar-inverse .navbar-nav>li>a:hover {
+
+background-color: transparent;
+}
+.domain {
+  font-style: italic;}
+
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    background-color: #f5f5f5;
+  }
+
+  .lantern {
+    max-width: 50px;
+  float: left;
+  }
+
+    .static-computer {
+  width: 100%;
+  height: auto; }
+
+.computer-container {
+  position: relative;
+  width: 638px;
+  height: 368px;
+  margin: 35px auto;
+  -webkit-transform: translateZ(0);
+          transform: translateZ(0);
+  -webkit-perspective: 900px;
+          perspective: 900px; }
+  @media (max-width: 710px) {
+    .computer-container {
+      width: 100%;
+      height: auto;
+      margin: 30px auto; } }
+
+.static-computer {
+  display: none; }
+  @media (max-width: 710px) {
+    .static-computer {
+      display: block; } }
+
+.computer-top {
+  position: absolute;
+  top: 0;
+  left: 62px;
+  width: 516px;
+  height: 345px;
+  background-size: cover;
+  background-image: url("http://www.burningflowe.rs/lantern/images/computer-top.png");
+  -webkit-transform: rotateX(-30deg) scale3d(1, 0.9, 1);
+          transform: rotateX(-30deg) scale3d(1, 0.9, 1);
+  -webkit-transform-origin: bottom center;
+      -ms-transform-origin: bottom center;
+          transform-origin: bottom center;
+  -webkit-transition: -webkit-transform 0.5s ease-in;
+          transition: transform 0.5s ease-in; }
+  @media (max-width: 710px) {
+    .computer-top {
+      display: none; } }
+  .page-ready .computer-top {
+    -webkit-transform: rotateX(0) scale3d(1, 1, 1);
+            transform: rotateX(0) scale3d(1, 1, 1); }
+
+.screen-cover {
+  position: absolute;
+  left: 50%;
+  top: 3%;
+  width: 78%;
+  height: 86%;
+  z-index: 2;
+  background-color: black;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  -webkit-transition: background-color 0.2s ease-in;
+          transition: background-color 0.2s ease-in; }
+  @media (min-width: 711px) {
+    .screen-cover {
+      -webkit-transform: translate3d(-50%, 0, 0) rotateX(-30deg) scale3d(1, 0.9, 1);
+              transform: translate3d(-50%, 0, 0) rotateX(-30deg) scale3d(1, 0.9, 1);
+      -webkit-transform-origin: bottom center;
+          -ms-transform-origin: bottom center;
+              transform-origin: bottom center;
+      -webkit-transition: -webkit-transform 0.5s ease-in, background-color 0.2s ease-in;
+              transition: transform 0.5s ease-in, background-color 0.2s ease-in; }
+      .page-ready .screen-cover {
+        -webkit-transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
+                transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1); } }
+  .video-ready.page-ready .screen-cover {
+    background-color: transparent; }
+  .cover-hidden .screen-cover {
+    display: none; }
+
+.video-container {
+  position: absolute;
+  left: 50%;
+  top: 5.5%;
+  width: 76%;
+  height: 82%;
+  z-index: 1;
+  overflow: hidden;
+  border-radius: 1px;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0); }
+  @media (min-width: 711px) {
+    .video-container {
+      -webkit-transform: translate3d(-50%, 5px, 0) rotateX(-30deg) scale3d(1.01, 0.9, 1);
+              transform: translate3d(-50%, 5px, 0) rotateX(-30deg) scale3d(1.01, 0.9, 1);
+      -webkit-transform-origin: bottom center;
+          -ms-transform-origin: bottom center;
+              transform-origin: bottom center;
+      -webkit-transition: -webkit-transform 0.5s ease-in;
+              transition: transform 0.5s ease-in; }
+      .page-ready .video-container {
+        -webkit-transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1);
+                transform: translate3d(-50%, 0, 0) scale3d(1, 1, 1); } }
+
+.embedded-video {
+  position: absolute;
+  left: 50%;
+  height: 100%;
+  -webkit-transform: translate3d(-50%, 0, 0);
+          transform: translate3d(-50%, 0, 0);
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.2s ease-in;
+          transition: opacity 0.2s ease-in; }
+  .embedded-video.visible {
+    opacity: 1;
+    visibility: visible; }
+  .embedded-video.on-top {
+    z-index: 2; }
+
+.computer-bottom {
+  position: absolute;
+  top: 344px;
+  left: 0;
+  width: 636px;
+  height: 24px;
+  background-size: cover;
+  background-image: url("http://www.burningflowe.rs/lantern/images/computer-bot.png"); }
+  @media (max-width: 710px) {
+    .computer-bottom {
+      display: none; } }
+
+      .form-signin
+      {
+          max-width: 330px;
+          padding: 15px;
+          margin: 0 auto;
+      }
+      .form-signin .form-signin-heading, .form-signin .checkbox
+      {
+          margin-bottom: 10px;
+      }
+      .form-signin .checkbox
+      {
+          font-weight: normal;
+      }
+      .form-signin .form-control
+      {
+          position: relative;
+          font-size: 16px;
+          height: auto;
+          padding: 10px;
+          padding-bottom: 4px;
+
+      }
+      .form-signin .form-control:focus
+      {
+          z-index: 2;
+      }
+      .form-signin input[type="text"]
+      {
+          margin-bottom: -1px;
+          border-bottom-left-radius: 0;
+          border-bottom-right-radius: 0;
+      }
+      .form-signin input[type="password"]
+      {
+          margin-bottom: 10px;
+          border-top-left-radius: 0;
+          border-top-right-radius: 0;
+      }
+      .account-wall
+      {
+          margin-top: 20px;
+          padding: 40px 0px 20px 0px;
+          background-color: #f7f7f7;
+          -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+          -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+      }
+      .login-title
+      {
+          color: #555;
+          font-size: 18px;
+          font-weight: 400;
+          display: block;
+      }

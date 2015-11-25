@@ -1,0 +1,67 @@
+extends layout
+
+block content
+    // Navigation
+    nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+      .container
+        // Brand and toggle get grouped for better mobile display
+        .navbar-header
+          button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+            span.sr-only Toggle navigation
+            span.icon-bar
+            span.icon-bar
+            span.icon-bar
+          img.lantern(src='/images/icon.png')
+          a.navbar-brand(href='#')
+            | Lantern
+            sup(style='text-transform: uppercase;\
+            font-size: .4em;\
+            letter-spacing: 0px;\
+            top: -1.5em;')  ALPHA
+        // Collect the nav links, forms, and other content for toggling
+        #bs-example-navbar-collapse-1.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            li
+              a.btn-twitter(href='http://twitter.com/home?status=Lantern, a new browser history sharing service. http://www.lantern-app.herokuapp.com', title='Share on Twitter', target='_blank')
+                i.fa.fa-twitter
+            li
+              a.btn-facebook(href='https://www.facebook.com/sharer/sharer.php?u=Lantern, a new browser history sharing service. http://www.lantern-app.herokuapp.com', title='Share on Facebook', target='_blank')
+                i.fa.fa-facebook
+            li
+              a(href='/getstarted') Get Started
+            li
+              a(href='/login') Login
+        // /.navbar-collapse
+      // /.container
+    // Page Content
+    .container
+      .social.row
+        .col-lg-12.text-center
+          h1.blue Conscious, Social Browsing
+          h3
+            | Share the best of your browser history with your friends.
+            | Lantern is strange at first, then becomes liberating.
+            br
+            br
+          .col-lg-3.text-right.margin-top-70
+            h3.blue How it Works
+            h4 Lantern shows a feed of all your friends' shared activity
+            h4 Lantern uses two modes (normal and open) depending on how much you want to share
+            h4 You can always 'hide' anything
+          .col-lg-3.text-left.pull-right.margin-top-70
+            h3.blue Benefits
+            h4 A new way to connect with friends
+            h4 Discover new content naturally
+            h4 Become more conscious of your own browsing habits
+          .computer-container
+                .computer-top
+                .computer-bottom
+                .video-container
+                  video.embedded-video(loop='loop', muted='muted', preload='auto')
+                    source(src='http://www.burningflowe.rs/lantern/videos/lantern.mp4', type='video/mp4')
+                  video.embedded-video(loop='loop', muted='muted', preload='auto')
+                    source(src='http://www.burningflowe.rs/lantern/videos/lantern.mp4', type='video/mp4')
+
+            .col-lg-12.text-center
+              a.btn(href='/getstarted')
+                h1 Get Started
