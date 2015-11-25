@@ -1,0 +1,48 @@
+extends layout
+block content
+  script.
+    function showForm(feedItemId){
+      document.getElementById(feedItemId).style.display = "block";
+    }
+    function hideForm(feedItemId){
+      document.getElementById(feedItemId).style.display = "none";
+    }
+  - var arr = feed.payload.results;
+
+  div.container
+    div.col-sm-8
+      span(id="today") Friends&nbsp;
+      span(id="date")
+      hr
+      - for (var i = 0; i< arr.length; i++)
+        div.row.item-row
+          div.col-md-3
+            a(href=arr[i].url)
+              img(src=arr[i].url_picture)
+          div.col-md-6
+            a(href=arr[i].url,target='blank')
+              p.title=arr[i].url_title
+              span.host=arr[i].host
+          div.col-md-3
+            p=arr[i].username
+            p.visited=arr[i].visited_human
+
+
+    - var myFeedArr = myFeed.payload.results;
+
+    div.col-sm-4
+      span(id="today") Me
+      hr
+      - for (var i = 0; i< myFeedArr.length; i++)
+        div.row(onmouseover='showForm(' + myFeedArr[i].feed_item_id + ');' onmouseout='hideForm(' + myFeedArr[i].feed_item_id + ');')
+          div.col-md-4(style="padding: 10px;")
+            a(href=myFeedArr[i].url)
+              img(src=myFeedArr[i].url_picture)
+          div.col-md-5.me-feed
+            a(href=myFeedArr[i].url)
+              span.me-title=myFeedArr[i].url_title
+          div.col-md-3
+            p.me-time=myFeedArr[i].visited_human
+            form(action='/deleteFeedItem',  method='post')
+              input(type="hidden" name="feedItemId" value=myFeedArr[i].feed_item_id)
+              input(style="display: none; color: grey; background-color: white; font-size: 1.2em;" id=myFeedArr[i].feed_item_id type='submit', value='Hide')

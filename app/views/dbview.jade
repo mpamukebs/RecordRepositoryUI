@@ -1,0 +1,48 @@
+extends layout
+block content
+
+  - var arr = dbview.dblist;
+
+  div.container
+    div.col-sm-10
+      div.col-sm-6
+        form.form-horizontal(role='form')
+          .form-group
+            input.form-control
+      div.col-sm-4
+          button.btn.btn-primary(type='submit') Search
+          br
+          br
+          br
+          br
+  div.container
+    div.col-sm-12
+      span(id="today") Databases&nbsp;
+      hr
+      - for (var i = 0; i< arr.length; i++)
+        div.row.item-row
+          div.col-md-2
+            p.title=arr[i].dbName
+          div.col-md-3
+              p.title=arr[i].dbDisplayName
+          div.col-md-2
+            a(href=arr[i].ddfUrl,target='blank')
+              p.title="map"
+          div.col-md-2
+            a(href="/fieldStats",target='blank')
+              p.title="field stats"
+          div.col-md-2
+            a(href="/fieldStats",target='blank')
+              p.title="ddf"
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br
+      br

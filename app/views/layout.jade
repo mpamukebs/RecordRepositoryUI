@@ -1,0 +1,45 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='../css/bootstrap.min.css')
+    link(rel='stylesheet', href='../stylesheets/whitelist.css')
+    link(rel='stylesheet', href='../stylesheets/style.css')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css')
+    link(rel='stylesheet', href='https://fonts.googleapis.com/css?family=Nunito:100,400,300')
+    script(type='text/javascript', src="../js/jquery.min.js")
+    script(type='text/javascript', src='../js/bootstrap.min.js')
+
+  body
+    nav.navbar.navbar-inverse.navbar-fixed-top
+      div.container
+        div.navbar-header
+          span.lantern
+            img(src='/images/icon.png')
+          span.navbar-brand CMS
+        div.collapse.navbar-collapse
+          ul.nav.navbar-nav
+            if locals.loggedin
+              li
+                a(href='/logout') Logout
+            else
+              li
+                a(href='/login') Login
+
+    block content
+  footer
+    div.container.text-center
+      span
+        a(href='mailto:mpamuk@ebsco.com', target='blank') Contact   &nbsp;&nbsp; &nbsp;
+      p
+
+script.
+  var today = new Date();
+  var dd = today.getDate();
+  var monthNames = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"
+  ];
+
+  var d = new Date();
+  today = dd;
+  document.getElementById("date").innerHTML = (monthNames[d.getMonth()]) + " " + dd;

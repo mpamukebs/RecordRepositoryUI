@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  nav.navbar.navbar-inverse.navbar-fixed-top(role='navigation')
+    .container
+      // Brand and toggle get grouped for better mobile display
+      .navbar-header
+        button.navbar-toggle(type='button', data-toggle='collapse', data-target='#bs-example-navbar-collapse-1')
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        img.lantern(src='../images/icon.png')
+        a.navbar-brand(href='/') Lantern
+      // Collect the nav links, forms, and other content for toggling
+      #bs-example-navbar-collapse-1.collapse.navbar-collapse
+        ul.nav.navbar-nav
+          li
+            a.btn-twitter(href='http://twitter.com/home?status=Lantern, a new browser history sharing service. http://www.lantern-app.herokuapp.com', title='Share on Twitter', target='_blank')
+              i.fa.fa-twitter
+          li
+            a.btn-facebook(href='https://www.facebook.com/sharer/sharer.php?u=Lantern, a new browser history sharing service. http://www.lantern-app.herokuapp.com', title='Share on Facebook', target='_blank')
+              i.fa.fa-facebook
+          li
+            //a(href='#contact') Logout
+      // /.navbar-collapse
+    // /.container
+  // Page Content
+  .container
+    .social.row
+      .col-lg-12.text-center
+        h1 Thanks for joining our Alpha. Here's how to set up Lantern
+      .col-lg-12.text-left
+        h2
+          | 1. Click
+          a(href='http://www.burningflowe.rs/lantern/lantern-chrome.zip', target='blank')  here
+          |  to download our install package and unzip it.
+        h2  2. In Google Chrome, select Chrome > Preferences > Extensions
+        h2
+          | 3. Select 'Developer Mode', 'Load Unpacked Extension', and then load the unzipped file
+        h2
+          | 4. Click on the
+          img(src='../images/icon.png', style='width:35px;')
+          |  on the upper right and sign in
+        h3
+          | Need help? contact
+          a(href='mailto:bb@burningflowe.rs', target='blank') bb@burningflowe.rs

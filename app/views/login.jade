@@ -1,0 +1,51 @@
+extends layout
+
+block content
+  script(type='text/javascript').
+    $(window).load(function(){
+        $("#FriendsModal").modal('show');
+    });
+  .container
+    #FriendsModal.modal.fade(role='dialog')
+      .modal-dialog
+        // Friends Modalcontent
+        .modal-content
+          .modal-header
+            button.close(type='button', data-dismiss='modal') ×
+            h4.modal-title Sign in to continue to FIT CMS
+          form.form-signin(action='/auth',  method='post')
+            .modal-body
+              input.form-signin.form-control(type='text', placeholder='Email', name='email', required='', autofocus='')
+              input.form-signin.form-control(type='password', placeholder='Password', name='password', required='')
+              .modal-footer
+              button.btn.btn-lg.btn.btn-primary(type='submit') Sign in
+
+  .container
+    .social.row
+      .col-lg-12.text-center
+        h1.blue FIT Content Management System
+        h3
+          | Metadata manager
+          | mapper, tagger tool
+        h3
+          | Project description here
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
+        br
