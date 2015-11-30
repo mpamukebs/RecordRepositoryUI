@@ -31,6 +31,7 @@ exports.logout = function (req,res,next){
   res.redirect("/signin.html");
 }
 
+
 exports.search = function (req,res,next){
   //?q=jstor
   var query = req.query.q;
@@ -63,6 +64,7 @@ exports.search = function (req,res,next){
     }
   });
 }
+
 exports.addFriends = function (req,res,next){
   console.log("ADD FRIENDS");
   var userId = req.body.userId;

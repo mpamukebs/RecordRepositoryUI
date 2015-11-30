@@ -25,6 +25,7 @@ exports.auth = function (req, res, next) {
     dblist: []
     };
 
+
     dbview.dblist.push({
         "dbName" : "aftnm",
         "dbDisplayName" : "Art Full Text Biographies",
