@@ -9,6 +9,7 @@ var async = require('async')
   , _ = require('lodash')
   , apiUrl = 'API_URL'
   , searchUrl = 'http://search-ebso-database-names-z4rbw7onbxnkfb6aub4k2roiwa.us-east-1.cloudsearch.amazonaws.com/2013-01-01/search'
+  , autosuggestUrl = 'http://search-ebso-database-names-z4rbw7onbxnkfb6aub4k2roiwa.us-east-1.cloudsearch.amazonaws.com/2013-01-01/suggest'
 
 
 
@@ -23,6 +24,25 @@ exports.userInfo = function (req, res, next) {
   });
 
 };
+
+exports.autosuggest = function (req,res,next){
+
+  var query = req.query.q;
+  console.log("req params " + JSON.stringify(req.query));
+  console.log(autosuggestUrl + "?q="+query);
+  request({
+    url: autosuggestUrl + "?suggester=dbname_suggester&q="+query, //URL to hit
+    method: 'GET'
+  }, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+      var responseJson = JSON.parse(body);
+      console.log(JSON.stringify(responseJson.suggest));
+      res.json(responseJson);
+    }
+  });
+}
 
 exports.logout = function (req,res,next){
   console.log("LOGOUT");

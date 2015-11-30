@@ -1,20 +1,46 @@
 extends layout
 block content
+  script.
+    $(document).ready(function () {
+    $("#q").autocomplete({
+      source: function (request, response) {
+          $.ajax({
+              url: "/autosuggest?q=" +request.term,
+              dataType: "jsonp",
+              jsonp : true,
+              cache: 'false',
+              success: function (data) {
+                  var result = data.suggest;
+                  if (result) {
+                      if (result.found > 0) {
+                          response($.map(result.suggestions, function (item) {
+                              return {
+                                  data: item,
+                                  label: item.suggestion,
+                                  value: item.suggestion
+                              }
+                          }));
+                      }
+                  }
+              },
+              error: function(jqXHR, textStatus, errorThrown){
+                   alert("error handler!");
+               },
+             dataType: 'json'
+          });
+      },
+      minLength: 3
+      });
+      });
 
   - var arr = dbview.dblist;
 
   div.container
     div.col-sm-10
       div.col-sm-6
-<<<<<<< HEAD
         form.form-horizontal(action='/search')
           .form-group
             input.form-control(id='q' name='q')
-=======
-        form.form-horizontal(role='form')
-          .form-group
-            input.form-control
->>>>>>> 4da54e90a19ddc15766ad1dd8dacc25282c8ce3f
       div.col-sm-4
           button.btn.btn-primary(type='submit') Search
           br

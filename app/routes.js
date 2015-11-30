@@ -19,6 +19,7 @@ module.exports = function (app) {
 		res.render('getstarted.jade');
 
 	});
+
   app.get('/logout', function (req, res) {
 		app.locals.loggedin = false;
 		res.redirect("/");
@@ -30,6 +31,7 @@ module.exports = function (app) {
 
 	app.get('/search', feed.search);
 
+	app.get('/autosuggest', feed.autosuggest);
 
 
 };
