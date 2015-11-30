@@ -8,6 +8,7 @@ var async = require('async')
   , request = require('request')
   , _ = require('lodash')
   , apiUrl = 'API_URL'
+  , searchUrl = 'http://search-ebso-database-names-z4rbw7onbxnkfb6aub4k2roiwa.us-east-1.cloudsearch.amazonaws.com/2013-01-01/search'
 
 
 
@@ -30,6 +31,38 @@ exports.logout = function (req,res,next){
   res.redirect("/signin.html");
 }
 
+exports.search = function (req,res,next){
+  //?q=jstor
+  var query = req.query.q;
+  console.log("req params " + JSON.stringify(req.query));
+  console.log(searchUrl + "?q="+query);
+  request({
+    url: searchUrl + "?q="+query, //URL to hit
+    method: 'GET'
+  }, function(error, response, body){
+    if(error) {
+        console.log(error);
+    } else {
+
+      var dbview = {
+        dblist: []
+      };
+      var responseJson = JSON.parse(body);
+      var hitList = responseJson.hits.hit;
+      console.log(JSON.stringify(hitList));
+      for (var i = 0; i< hitList.length; i++){
+        dbview.dblist.push({
+            "dbName" : hitList[i].fields.dbname_short,
+            "dbDisplayName" : hitList[i].fields.dbname_full,
+            "ddfUrl"  : "ddffile"
+        });
+      }
+      res.render('dbview', {
+        'dbview': dbview
+      });
+    }
+  });
+}
 exports.addFriends = function (req,res,next){
   console.log("ADD FRIENDS");
   var userId = req.body.userId;

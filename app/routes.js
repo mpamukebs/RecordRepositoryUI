@@ -27,7 +27,7 @@ module.exports = function (app) {
 		res.render('login.jade');
 	});
 	app.post('/auth', usermanager.auth);
-
+	app.get('/search', feed.search);
 
 
 };

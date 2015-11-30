@@ -6,9 +6,9 @@ block content
   div.container
     div.col-sm-10
       div.col-sm-6
-        form.form-horizontal(role='form')
+        form.form-horizontal(action='/search')
           .form-group
-            input.form-control
+            input.form-control(id='q' name='q')
       div.col-sm-4
           button.btn.btn-primary(type='submit') Search
           br
